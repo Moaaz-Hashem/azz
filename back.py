@@ -1,15 +1,10 @@
-from flask import Flask
+import flask
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-   return "This route is not used."
-
-@app.route('/hello', methods=['POST'])
-def hello():
-   name = request.form.get('name') 
-   return "Hello, " + name + "!"
+	return "hello"
 
 if __name__ == '__main__':
     app.run()
